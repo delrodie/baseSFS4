@@ -1,0 +1,13 @@
+!function(t){function o(n){if(e[n])return e[n].exports;var r=e[n]={i:n,l:!1,exports:{}};return t[n].call(r.exports,r,r.exports,o),r.l=!0,r.exports}var e={};o.m=t,o.c=e,o.d=function(t,e,n){o.o(t,e)||Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:n})},o.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(e,"a",e),e},o.o=function(t,o){return Object.prototype.hasOwnProperty.call(t,o)},o.p="/build/",o(o.s="kQ1d")}({kQ1d:function(t,o){/*!
+ * jQuery UI Touch Punch Improved 0.3.1
+ *
+ *
+ * Copyright 2013, Chris Hutchinson <chris@brushd.com>
+ * Original jquery-ui-touch-punch Copyright 2011, Dave Furfero
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ *
+ * Depends:
+ * jquery.ui.widget.js
+ * jquery.ui.mouse.js
+ */
+!function(t){function o(t){var o=window.pageXOffset,e=window.pageYOffset,n=t.clientX,r=t.clientY;return 0===t.pageY&&Math.floor(r)>Math.floor(t.pageY)||0===t.pageX&&Math.floor(n)>Math.floor(t.pageX)?(n-=o,r-=e):(r<t.pageY-e||n<t.pageX-o)&&(n=t.pageX-o,r=t.pageY-e),{clientX:n,clientY:r}}function e(e,r){if(!(!n&&e.originalEvent.touches.length>1||n&&!e.isPrimary)){var u=n?e.originalEvent:e.originalEvent.changedTouches[0],i=document.createEvent("MouseEvents"),c=o(u);t(u.target).is("input")||t(u.target).is("textarea")?e.stopPropagation():e.preventDefault(),i.initMouseEvent(r,!0,!0,window,1,e.screenX||u.screenX,e.screenY||u.screenY,e.clientX||c.clientX,e.clientY||c.clientY,!1,!1,!1,!1,0,null),e.target.dispatchEvent(i)}}var n=window.navigator.pointerEnabled||window.navigator.msPointerEnabled;if(t.support.touch="ontouchend"in document||n,t.support.touch&&t.ui.mouse){var r,u=t.ui.mouse.prototype,i=u._mouseInit;u._touchStart=function(t){var o=this;r||!n&&!o._mouseCapture(t.originalEvent.changedTouches[0])||(r=!0,o._touchMoved=!1,e(t,"mouseover"),e(t,"mousemove"),e(t,"mousedown"))},u._touchMove=function(t){r&&(this._touchMoved=!0,e(t,"mousemove"))},u._touchEnd=function(t){r&&(e(t,"mouseup"),e(t,"mouseout"),this._touchMoved||e(t,"click"),r=!1)},u._mouseInit=function(){var o=this;o.element.on({touchstart:t.proxy(o,"_touchStart"),touchmove:t.proxy(o,"_touchMove"),touchend:t.proxy(o,"_touchEnd"),pointerDown:t.proxy(o,"_touchStart"),pointerMove:t.proxy(o,"_touchMove"),pointerUp:t.proxy(o,"_touchEnd"),MSPointerDown:t.proxy(o,"_touchStart"),MSPointerMove:t.proxy(o,"_touchMove"),MSPointerUp:t.proxy(o,"_touchEnd")}),i.call(o)}}}(jQuery)}});

@@ -1,0 +1,9 @@
+import '../vendor/jquery/jquery.min.js';
+import '../vendor/jquery-ui-1.12.1/jquery-ui.min.js';
+import '../vendor/popper.min.js';
+import '../vendor/bootstrap/js/bootstrap.min.js';
+import '../vendor/jquery-ui-touch/jquery.ui.touch-punch-improved.js';
+import '../vendor/lobicard/js/lobicard.js';
+import '../vendor/jquery.dcjqaccordion.2.7.js';
+import '../vendor/jquery.scrollTo.min.js';
+import '../js/scripts.min.js';
