@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-        <link href="{{ absolute_url(asset('build/js/app.css'))}}" rel="stylesheet">
+        <link href="{{ absolute_url(asset('build/app.css'))}}" rel="stylesheet">
         {% endblock %}
     </head>
     <body>
@@ -15,7 +15,7 @@
         </div>
         {% block body %}{% endblock %}
         {% block javascripts %}
-        <script src="{{ absolute_url(asset('build/js/app.js'))}}"></script>
+        <script src="{{ absolute_url(asset('build/app.js'))}}"></script>
         {% endblock %}
     </body>
 </html>
